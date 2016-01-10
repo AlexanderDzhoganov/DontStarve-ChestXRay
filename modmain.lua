@@ -50,7 +50,7 @@ end
 
 local run = AddSimPostInit
 if GLOBAL.TheSim:GetGameID() == "DST" then
-	run = GLOBAL.TheMod.AddLocalPlayerPostActivation
+	run = AddPlayerPostInit
 end
 
 run(function(player)
