@@ -48,7 +48,12 @@ function DestroyWidgets(hud)
 	widget = nil
 end
 
-AddSimPostInit(function(player)
+local run = AddSimPostInit
+if GLOBAL.TheSim:GetGameID() == "DST" then
+	run = GLOBAL.TheMod.AddLocalPlayerPostActivation
+end
+
+run(function(player)
 	player:DoPeriodicTask(0, function()
 		local inst = Input:GetWorldEntityUnderMouse()
 		if inst ~= nil and inst.components.container ~= nil and inst.prefab == "treasurechest" then
