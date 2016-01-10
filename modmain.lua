@@ -53,7 +53,7 @@ end
 run(function(player)
 	player:DoPeriodicTask(0, function()
 		local inst = Input:GetWorldEntityUnderMouse()
-		if inst ~= nil and inst.components.container ~= nil and inst.prefab == "treasurechest" and not inst.components.container.open then
+		if inst ~= nil and inst.components.container ~= nil then
 			if widget ~= nil then
 				if current ~= inst then
 					DestroyWidgets(player.HUD)
@@ -62,8 +62,10 @@ run(function(player)
 				end
 			end
 
-			current = inst
-			CreateWidgets(player.HUD, inst, inst.components.container)
+			if inst.prefab == "treasurechest" and not inst.components.container.open then
+				current = inst
+				CreateWidgets(player.HUD, inst, inst.components.container)
+			end
 		else
 			if inst == nil or inst.components.container == nil then
 				DestroyWidgets(player.HUD)
