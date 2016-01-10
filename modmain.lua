@@ -23,17 +23,14 @@ function CreateWidgets(hud, inst, container)
 		end
 	end
 
-	local currentX = 32
+	local currentX = 38
 	for k, v in pairs(items) do
 		local item = v
 		if item ~= nil then
-			local atlas = item.components.inventoryitem:GetAtlas()
-			local image = item.components.inventoryitem:GetImage()
-
-			local image = widget:AddChild(ImageWidget(atlas, image))
+			local image = widget:AddChild(ImageWidget("images/inventoryimages.xml", item.prefab .. ".tex"))
 			image:SetPosition(currentX, 0, 0)
 			image:SetScale(0.6, 0.6, 0.6)
-			currentX = currentX + 32
+			currentX = currentX + 38
 		end
 	end
 end
