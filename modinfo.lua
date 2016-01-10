@@ -4,7 +4,7 @@ name = "Chest X-Ray"
 description = "Allows you to inspect containers by hovering over them"
 
 author = "nlight"
-version = "1.0"
+version = "1.0a"
 
 forumthread = ""
 
@@ -13,3 +13,6 @@ api_version = 6
 
 dont_starve_compatible = true
 reign_of_giants_compatible = true
+dst_compatible = true
+all_clients_require_mod = false
+client_only_mod = true
