@@ -4,7 +4,7 @@ name = "Chest X-Ray"
 description = "Allows you to inspect chests by hovering over them"
 
 author = "nlight"
-version = "1.1a"
+version = "1.2"
 
 forumthread = ""
 
